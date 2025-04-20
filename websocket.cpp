@@ -1,8 +1,7 @@
 #include <WebSocketsClient.h>
 
-const char* webSocketHost = "localhost";
-const int webSocketPort = 3001;
-const char* webSocketPath = "/";
+#include "credentials.h"
+#include "lightbulb.h"
 
 WebSocketsClient webSocket;
 
@@ -22,7 +21,8 @@ void webSocketEvent(WStype_t type, uint8_t* payload, size_t length) {
 
 void webSocketSetup() {
   webSocket.begin(webSocketHost, webSocketPort, webSocketPath);
-  webSocket.onEvent(webSocketEvent);
+  new Lightbulb(webSocket);
+  // webSocket.onEvent(webSocketEvent);
 }
 
 void webSocketListen() { webSocket.loop(); }

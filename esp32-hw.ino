@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 #include "credentials.h"
-#include "webserver.h"
+// #include "webserver.h"
 #include "websocket.h"
 #include "wifi.h"
 
@@ -20,7 +20,7 @@ void setup(void) {
   digitalWrite(LED_BUILTIN, HIGH);
 
   if (connectToWifi(ssid, passPhrase)) {
-    serverSetup();
+    // serverSetup();
     webSocketSetup();
 
     serverStarted = true;
@@ -29,7 +29,7 @@ void setup(void) {
 
 void loop(void) {
   if (serverStarted) {
-    serverListen();
+    // serverListen();
     webSocketListen();
   }
 
