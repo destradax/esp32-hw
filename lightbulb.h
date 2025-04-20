@@ -1,5 +1,5 @@
-#ifndef LIGHTBULB
-#define LIGHTBULB
+#ifndef LIGHTBULB_H
+#define LIGHTBULB_H
 
 #include <WebSocketsClient.h>
 
