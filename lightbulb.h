@@ -5,11 +5,9 @@
 
 class Lightbulb {
  public:
-  Lightbulb(WebSocketsClient webSocket);
-
   void processCommand(uint8_t* payload);
 
   void webSocketEvent(WStype_t type, uint8_t* payload, size_t length);
-}
+};
 
 #endif
